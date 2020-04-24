@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1587033531 source:c:\users\mars\desktop\lab\lab14\main.cpp
+	<iostream>
+	<cstring>
+	"point.h"
+
+1587032240 c:\users\mars\desktop\lab\lab14\point.h
+

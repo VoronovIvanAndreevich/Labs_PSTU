@@ -1,0 +1,54 @@
+#include <iostream>
+using namespace std;
+const int boardSize = 8;
+int board[boardSize][boardSize];
+int counter = 0;
+void showBoard(){
+    for(int r = 0; r < boardSize; ++r){
+        for(int c = 0; c < boardSize; c++){
+            cout << ((board[r][c]) ? "F " : ". ");
+        }
+        cout << endl;
+    }
+}
+bool tryQueen(int a, int b){
+    for(int i = 0; i < a; ++i){
+        if(board[i][b]){
+            return false;
+        }
+    }
+    for(int i = 1; i <= a && b-i >= 0; ++i){
+        if(board[a-i][b-i]){
+            return false;
+        }
+    }
+
+    for(int i = 1; i <= a && b+i < boardSize; i++){
+        if(board[a-i][b+i]){
+            return false;
+        }
+    }
+    return true;
+}
+
+void setQueen(int a){
+    if(a == boardSize){
+        showBoard();
+        cout << "Расстановка: " << ++counter << endl << endl;
+        return;
+    }
+
+    for(int i = 0; i < boardSize; ++i){
+        if(tryQueen(a, i)){
+            board[a][i] = 1;
+            setQueen(a+1);
+            board[a][i] = 0;
+        }
+    }
+    return;
+}
+int main(){
+    setlocale(LC_ALL,"Russian");
+    setQueen(0);
+    return 0;
+}

@@ -1,0 +1,59 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+int k=0, first, last;
+void counting_sort(int *A, int *B, int n){
+	int *C=new int[k];
+	for(int i=0;i<k+1;i++) C[i]=0;
+	for(int j=1;j<=n;j++) C[A[j]]++;
+	for(int i=1;i<=k;i++) C[i]+=C[i-1];
+	for(int j=n;j>=1;j--){
+		B[C[A[j]]]=A[j];
+		C[A[j]]=C[A[j]]-1;
+	}
+	delete [] C;
+}
+void quicksort(int *arr, int first, int last){
+    int mid, count;
+    int f=first, l=last;
+    mid=arr[(f+l) / 2];
+    do{
+        while (arr[f]<mid) f++;
+        while (arr[l]>mid) l--;
+        if (f<=l) {
+            count=arr[f];
+            arr[f]=arr[l];
+            arr[l]=count;
+            f++;
+            l--;
+        }
+    } while (f<l);
+    if (first<l) quicksort(arr, first, l);
+    if (f<last) quicksort(arr, f, last);
+}
+int main(){
+    setlocale(LC_ALL, "Russian");
+    srand(time(NULL));
+	int n;
+	cout<<"Введите размерность массива: ";
+	cin>>n;
+	int *A=new int[n];
+	int *B=new int [n];
+    cout << "Не отсортированный массив: " << endl;
+	for(int i=1;i<=n;i++){
+		A[i]=1 + rand()%100;
+		if(A[i]>k) k=A[i];
+		cout << A[i] << ' ';
+	}
+	counting_sort(A,B,n);
+	cout << endl << "Отсортированный массив с помощью сортировки подсчетом: " << endl;
+	for(int i=1;i<=n;i++) cout<<B[i]<<' ';
+	first=0; last=n-1;
+	quicksort(A, first, last);
+	cout << endl << "Отсортированный массив с помощью быстрой сортировки: " << endl;
+	for(int i=1;i<=n;i++) cout<<A[i] << ' ';
+	delete [] A;
+	delete [] B;
+	return 0;
+}
