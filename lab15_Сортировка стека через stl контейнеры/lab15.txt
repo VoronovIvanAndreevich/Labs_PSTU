@@ -1,0 +1,38 @@
+#include <iostream>
+#include <ctime>
+#include <cstdlib>
+#include <stack>
+using namespace std;
+stack<int> sortStack(stack<int> &input){
+    stack<int>tmp_stack;
+    while (!input.empty()){
+        int tmp = input.top();
+        input.pop();
+        while (!tmp_stack.empty() && tmp_stack.top() > tmp){
+            input.push(tmp_stack.top());
+            tmp_stack.pop();
+        }
+        tmp_stack.push(tmp);
+    }
+    return tmp_stack;
+}
+int main(){
+    setlocale(LC_ALL, "Russian");
+    srand(time(0));
+    stack<int> in;
+    int n;
+    cout << "Введите количесвто элементов в стеке: ";
+    cin >> n;
+    cout << "Неотстортированный стек: ";
+    for (int i=0; i<n; i++) {
+        in.push(rand()%100);
+        cout << in.top()<< ' ';
+    }
+    stack<int>tmp = sortStack(in);
+    cout << endl << "Отсортированный стек: ";
+    while (!tmp.empty()){
+        cout << tmp.top()<< ' ';
+        tmp.pop();
+    }
+    return 0;
+}

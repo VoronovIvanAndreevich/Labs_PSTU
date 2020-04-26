@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1587899110 source:c:\users\mars\desktop\lab\lab_15\main.cpp
+	<iostream>
+	<ctime>
+	<cstdlib>
+	<stack>
+
