@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1587993976 source:c:\users\mars\desktop\lab\lab18\main.cpp
+	<iostream>
+	<string>
+	<stdlib.h>
+	<ctime>
+	<windows.h>
+
+1587991671 c:\users\mars\desktop\lab\lab18\random.h
+	<iostream>
+	<cstdlib>
+	<ctime>
+	<string>
+	<cmath>
+
