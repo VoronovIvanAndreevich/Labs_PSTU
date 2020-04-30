@@ -1,0 +1,77 @@
+#include <iostream>
+#include <string>
+using namespace std;
+class Car {
+private:
+    string mark;
+    string model;
+    int cost;
+public:
+    Car() {
+        mark = "Lada";
+        model = "Vesta";
+        cost = 700;
+        cout << "Конструктор без параметров" << endl;
+    }
+    Car(string mar, string mod, int cos) {
+        mark = mar;
+        model = mod;
+        cost = cos;
+        cout << "Конструктор с параметрами" << endl;
+    }
+    Car(const Car &car) {
+        mark = car.mark;
+        model = car.model;
+        cost = car.cost;
+        cout << "Конструктор копирования" << endl;
+    }
+    void setCar() {
+        cout << "Введите название марки: ";
+        cin >> mark;
+        cout << "Введите название модели: ";
+        cin >> model;
+        cout << "Введите цену: ";
+        cin >> cost;
+    }
+    void getCar() {
+        cout << "Параметры автомобиля: " << endl;
+        cout << "Марка: " << mark << endl;
+        cout << "Модель: " << model << endl;
+        cout << "Цена: " << cost << endl << endl;
+    }
+    ~Car() {
+        cout << "Здесь отработал деструктор" << endl;
+    }
+};
+class Fraction {
+public:
+	float first;
+	int second;
+	float summa(float a, int b, int col_dn)
+	{
+		float summ = a / col_dn * b;
+		return summ;
+	};
+};
+int main(){
+    setlocale(LC_ALL, "Russian");
+    Fraction fr;
+	cout << "Введите сумму оклада: " << endl;;
+	cin >> fr.first;
+	cout << "Введите количество отработанных дней: " << endl;;
+	cin >> fr.second;
+	int col_dn;
+	cout << "Введите количество дней в месяце: " << endl;;
+	cin >> col_dn;
+	float summa = fr.summa(fr.first, fr.second, col_dn);
+	cout << "Начисленная сумма за данное количество дней: " << summa << endl;
+	cout << "Автомобиль!" << endl;
+    Car car1;
+    car1.setCar();
+    car1.getCar();
+    Car car2("Toyota", "Mark II", 300);
+    car2.getCar();
+    Car car3(car2);
+    car3.getCar();
+    return 0;
+}
