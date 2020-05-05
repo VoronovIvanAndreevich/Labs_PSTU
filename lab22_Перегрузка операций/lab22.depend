@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1588664189 source:c:\users\mars\desktop\lab\lab22\main.cpp
+	"pair.cpp"
+
+1588664151 c:\users\mars\desktop\lab\lab22\pair.h
+	<iostream>
+
+1588664138 c:\users\mars\desktop\lab\lab22\pair.cpp
+	"pair.h"
+
