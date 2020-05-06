@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1588746178 source:c:\users\mars\desktop\lab\lab23\main.cpp
+	<iostream>
+	"Containers.cpp"
+
+1588746446 c:\users\mars\desktop\lab\lab23\containers.cpp
+	<iostream>
+	"methods.h"
+
+1588746422 c:\users\mars\desktop\lab\lab23\methods.h
+	<iostream>
+	<cassert>
+
