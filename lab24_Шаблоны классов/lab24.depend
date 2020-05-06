@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1588750560 source:c:\users\mars\desktop\lab\lab24\main.cpp
+	"Vector.h"
+	<iostream>
+	"Time.h"
+
+1588750671 c:\users\mars\desktop\lab\lab24\vector.h
+	<iostream>
+
