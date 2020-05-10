@@ -1,0 +1,64 @@
+#include <iostream>
+#include "List.cpp"
+#include "Vector.cpp"
+#include "Error.h"
+using namespace std;
+int main(){
+	setlocale(LC_ALL, "Russian");
+	int a;
+	cout << "Первый или второй способ реализации: ";
+	cin >> a;
+	int	arr[2] = {1,2};
+	if (a == 1){
+		try{
+			List b(2, arr);
+			cout << "Элементы: ";
+			cout << b;
+			cout << "Введите индекс элемента: ";
+			int i=0;
+			cin >> i;
+			cout << "Элемент с индексом: " << i << endl;
+			cout << b[i] << endl;
+			cout << "Вычитаем элемент" << endl;
+			--b;
+			cout << b;
+			cout << "Вычитаем элемент" << endl;
+			--b;
+			cout << b;
+			cout << "Вычитаем элемент" << endl;
+			--b;
+		}
+		catch (int){
+			cout << "Ошибка!" << endl;
+		}
+		return 0;
+	}
+	else if (a == 2){
+		try{
+			List2 b(2, arr);
+			cout << "Элементы: ";
+			cout << b;
+			cout << "Введите индекс элемента: ";
+			int i=0;
+			cin >> i;
+			cout << "Элемент с индексом " << i << endl;
+			cout << b[i] << endl;
+			cout << "Вычитаем элемент" << endl;
+			--b;
+			cout << b;
+			cout << "Вычитаем элемент" << endl;
+			--b;
+			cout << b;
+			cout << "Вычитаем элемент" << endl;
+			--b;
+		}
+		catch (error e){
+			e.what();
+		}
+		return 0;
+	}
+	else {
+	cout << "Несуществующий номер!";
+	return 0;
+	}
+}

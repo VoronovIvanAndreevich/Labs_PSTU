@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1589107049 source:c:\users\mars\desktop\lab\lab26\main.cpp
+	<iostream>
+	"List.cpp"
+	"Vector.cpp"
+	"Error.h"
+
+1589106758 c:\users\mars\desktop\lab\lab26\list.cpp
+	"List.h"
+
+1589106206 c:\users\mars\desktop\lab\lab26\list.h
+	<iostream>
+
+1589105686 c:\users\mars\desktop\lab\lab26\vector.cpp
+	"Vector.h"
+	"Error.h"
+
+1589104677 c:\users\mars\desktop\lab\lab26\vector.h
+	<iostream>
+
+1589104678 c:\users\mars\desktop\lab\lab26\error.h
+	<string>
+	<iostream>
+
